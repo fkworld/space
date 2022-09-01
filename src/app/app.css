@@ -1,0 +1,33 @@
+.app-layout {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.app-layout-header {
+  z-index: 3;
+  box-shadow: 0 0 12px 0 rgb(0, 0, 0, 0.2);
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.app-layout-sider {
+  z-index: 2;
+  box-shadow: 0 0 12px 0 rgb(0, 0, 0, 0.2);
+  padding-top: 16px;
+}
+
+.app-layout-content {
+  z-index: 1;
+  padding: 16px;
+  overflow: scroll;
+}
+
+.app-name {
+  font-size: 20px;
+}

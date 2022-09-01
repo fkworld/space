@@ -4,7 +4,7 @@
     "module": "ESNext",
     "strict": true,
     "esModuleInterop": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {

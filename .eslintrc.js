@@ -25,6 +25,9 @@ module.exports = {
     'react/self-closing-comp': 'error',
   },
   overrides: [
-    { files: './vite.config.ts', rules: { 'import/no-default-export': 'off' } },
+    {
+      files: ['./vite.config.ts', './src/pages/*/index.ts'],
+      rules: { 'import/no-default-export': 'off' },
+    },
   ],
 }
