@@ -2,6 +2,7 @@
   "name": "template-data-management",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
