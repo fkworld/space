@@ -36,15 +36,16 @@ export const AppHeader: FC = () => {
   ]
 
   return (
-    <>
-      {APP_LOGO}
-      <div className="app-name">{APP_NAME}</div>
-      <div style={{ flex: 1 }} />
+    <div className="h-full flex items-center gap-2 pl-4 pr-4">
+      <div className="text-4xl">{APP_LOGO}</div>
+      <div className="text-xl">{APP_NAME}</div>
+      <div className="flex-auto" />
       <Dropdown overlay={<Menu items={menuItems} />} trigger={['click']}>
         <Button size="small">
-          更多 <CaretDownOutlined />
+          更多
+          <CaretDownOutlined />
         </Button>
       </Dropdown>
-    </>
+    </div>
   )
 }
