@@ -7,7 +7,10 @@
     "prepare": "husky install",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:lint-staged": "lint-staged",
+    "lint:ls-lint": "ls-lint",
+    "lint:commitlint": "commitlint"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@ls-lint/ls-lint": "^1.11.2",
     "@types/lodash": "^4.14.185",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
