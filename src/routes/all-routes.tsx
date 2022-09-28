@@ -1,7 +1,3 @@
-/**
- * @author fkworld
- */
-
 import React, { FC } from 'react'
 import { Navigate, useRoutes } from 'react-router-dom'
 

@@ -1,7 +1,3 @@
-/**
- * @author fkworld
- */
-
 import { Button, Result } from 'antd'
 import React, { FC } from 'react'
 

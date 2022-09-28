@@ -1,7 +1,3 @@
-/**
- * @author fkworld
- */
-
 import { Skeleton } from 'antd'
 import React, { FC, Suspense } from 'react'
 

@@ -1,7 +1,3 @@
-/**
- * @author fkworld
- */
-
 import { GithubOutlined, HomeOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 import React, { FC } from 'react'

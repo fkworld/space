@@ -1,7 +1,3 @@
-/**
- * @author fkworld
- */
-
 import 'antd/dist/antd.compact.css'
 import './app.css'
 
