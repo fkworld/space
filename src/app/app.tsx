@@ -16,16 +16,16 @@ export const App: FC = () => {
       <BrowserRouter>
         <UserContextProvider>
           <div className="flex flex-col min-h-screen">
-            <div className="h-16 border-solid border-0 border-b border-b-slate-200">
+            <div className="h-14 pl-8 pr-8 bg-white z-10 shadow-around">
               <AppHeader />
             </div>
             <div className="flex-auto flex">
-              <div className="w-40 border-solid border-0 border-r border-r-slate-200">
-                <div className="sticky top-0">
+              <div className="w-40 shadow-around">
+                <div className="sticky top-0 pt-4">
                   <AppMenu />
                 </div>
               </div>
-              <div className="flex-auto p-2">
+              <div className="flex-auto p-4">
                 <AllRoutes />
               </div>
             </div>

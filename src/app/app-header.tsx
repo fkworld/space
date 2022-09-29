@@ -42,7 +42,7 @@ export const AppHeader: FC = () => {
   ]
 
   return (
-    <div className="h-full flex items-center gap-2 pl-4 pr-4">
+    <div className="h-full flex items-center gap-2">
       <div className="text-4xl">{APP_LOGO}</div>
       <div className="text-xl">{APP_NAME}</div>
       <Tooltip
@@ -58,7 +58,7 @@ export const AppHeader: FC = () => {
           </div>
         }
       >
-        <div className="text-gray-500">{__APP_VERSION__}</div>
+        <div className="text-black/50">{__APP_VERSION__}</div>
       </Tooltip>
       <div className="flex-auto" />
       <div>

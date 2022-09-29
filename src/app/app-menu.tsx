@@ -1,3 +1,4 @@
+import { GithubOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 import { uniqueId } from 'lodash'
 import React, { FC } from 'react'
@@ -27,5 +28,5 @@ export const AppMenu: FC = () => {
     },
   ]
 
-  return <Menu mode="inline" theme="light" items={items} />
+  return <Menu mode="inline" theme="light" style={{ borderWidth: 0 }} items={items} />
 }
