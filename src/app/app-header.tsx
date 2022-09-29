@@ -5,22 +5,32 @@ import {
   MessageOutlined,
   NotificationOutlined,
 } from '@ant-design/icons'
-import { Button, Dropdown, Menu, MenuProps, Tag, Tooltip } from 'antd'
+import { Avatar, Dropdown, Menu, MenuProps, Tooltip } from 'antd'
 import React, { FC } from 'react'
+
+import { useUser } from '@/stores'
 
 import { APP_LOGO, APP_NAME } from './app-config'
 
 export const AppHeader: FC = () => {
+  const { user } = useUser()
+
   const menuItems: MenuProps['items'] = [
     {
       type: 'group',
-      label: '账号',
+      label: `欢迎 ${user.username}`,
+    },
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: `账号`,
       children: [
         { key: 'login', label: '登录', icon: <LoginOutlined /> },
         { key: 'logout', label: '登出', icon: <LoginOutlined /> },
         { key: 'message', label: '消息', icon: <MessageOutlined /> },
       ],
     },
+    { type: 'divider' },
     {
       type: 'group',
       label: '链接',
@@ -51,12 +61,12 @@ export const AppHeader: FC = () => {
         <div className="text-gray-500">{__APP_VERSION__}</div>
       </Tooltip>
       <div className="flex-auto" />
-      <Dropdown overlay={<Menu items={menuItems} />} trigger={['click']}>
-        <Button size="small">
-          更多
+      <div>
+        <Avatar icon={<GithubOutlined />} />
+        <Dropdown overlay={<Menu className="w-40" items={menuItems} />} trigger={['click']} arrow>
           <CaretDownOutlined />
-        </Button>
-      </Dropdown>
+        </Dropdown>
+      </div>
     </div>
   )
 }
