@@ -1,8 +1,6 @@
-import { Button, Result } from 'antd'
+import { Result } from 'antd'
 import React, { FC } from 'react'
 
 export const Route403: FC = () => {
-  return (
-    <Result status="403" title="403 页面无权限" extra={<Button type="primary">申请权限</Button>} />
-  )
+  return <Result status="403" title="403" subTitle="你访问了一个没有权限的页面，请先申请权限。" />
 }

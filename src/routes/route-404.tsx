@@ -1,16 +1,12 @@
-import { Button, Result } from 'antd'
+import { Result } from 'antd'
 import React, { FC } from 'react'
 
 export const Route404: FC = () => {
   return (
     <Result
       status="404"
-      title="404 页面不存在"
-      extra={
-        <Button type="primary" href="/">
-          回到首页
-        </Button>
-      }
+      title="404"
+      subTitle="你访问了一个不存在的页面，请检查网址输入是否正确，或者联系开发团队。"
     />
   )
 }
