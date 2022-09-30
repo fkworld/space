@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 
+import { Panel } from '@/components'
+
 export const HomePage: FC = () => {
-  return <span>Welcome</span>
+  return <Panel>欢迎</Panel>
 }
