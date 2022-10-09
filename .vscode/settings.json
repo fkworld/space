@@ -1,3 +1,8 @@
 {
-  "cSpell.words": ["antd", "Sider"]
+  "cSpell.words": ["antd", "Sider"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
