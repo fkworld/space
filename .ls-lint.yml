@@ -15,5 +15,6 @@ ignore:
   - .git
   - .husky
   - .vscode
+  - .yarn
   - README.md
   - vite.config.js

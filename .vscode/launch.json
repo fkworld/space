@@ -7,7 +7,7 @@
     {
       "name": "dev",
       "type": "node-terminal",
-      "command": "npm run dev",
+      "command": "yarn dev",
       "request": "launch"
     }
   ]
