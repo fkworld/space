@@ -6,7 +6,7 @@ export const Panel: FC<{
 }> = (props) => {
   const { children = null, style } = props
   return (
-    <div className="w-full h-auto p-2 bg-white shadow-around" style={style}>
+    <div className="w-full h-auto p-2 bg-white border-gray-200 border-solid border" style={style}>
       {children}
     </div>
   )
