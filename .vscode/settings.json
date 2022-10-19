@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["antd", "Sider"],
+  "cSpell.words": ["antd"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },

@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 16
       - name: Build project
-        run: yarn && yarn build
+        run: npm install -g pnpm && pnpm install --prod && pnpm run build
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact

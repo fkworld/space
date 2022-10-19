@@ -7,7 +7,7 @@
     {
       "name": "dev",
       "type": "node-terminal",
-      "command": "yarn dev",
+      "command": "pnpm run dev",
       "request": "launch"
     }
   ]

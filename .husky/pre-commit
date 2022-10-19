@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint:ls-lint
-npm run lint:lint-staged
+pnpm run lint:ls-lint
+pnpm run lint:lint-staged
+pnpm run lint:tsc
