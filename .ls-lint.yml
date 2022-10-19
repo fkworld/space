@@ -13,6 +13,7 @@ ls:
 ignore:
   - node_modules
   - .git
+  - .github
   - .husky
   - .vscode
   - .yarn
