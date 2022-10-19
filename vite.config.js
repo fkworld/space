@@ -8,6 +8,7 @@ import { version } from './package.json'
 export default defineConfig({
   plugins: [react()],
   // 这个 base 是 github workflow 需要的，实际开发时可以为空
+  // 特别注意，base 还影响到路由构建，需要要给 BrowserRouter 组件增加 basename props
   base: '/template-data-management/',
   resolve: {
     alias: {

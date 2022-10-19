@@ -13,7 +13,7 @@ import { AppMenu } from './app-menu'
 export const App: FC = () => {
   return (
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <UserContextProvider>
           <div className="flex flex-col min-h-screen">
             <div className="h-14 pl-8 pr-8 bg-white border-gray-200 border-solid border-0 border-b">
