@@ -7,6 +7,8 @@ import { version } from './package.json'
 
 export default defineConfig({
   plugins: [react()],
+  // 这个 base 是 github workflow 需要的，实际开发时可以为空
+  base: '/template-data-management/',
   resolve: {
     alias: {
       '@': resolve(__dirname, './src/'),
