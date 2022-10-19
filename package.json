@@ -6,6 +6,8 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint:lint-staged": "lint-staged",
@@ -31,6 +33,7 @@
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
+    "@vitest/coverage-c8": "^0.24.3",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -38,7 +41,8 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "vitest": "^0.24.3"
   },
   "dependencies": {
     "@ant-design/colors": "^6.0.0",

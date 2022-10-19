@@ -7,6 +7,8 @@ ls:
   .ts: kebab-case
   .tsx: kebab-case
   .d.ts: kebab-case
+  .test.ts: kebab-case
+  .test.tsx: kebab-case
   .md: kebab-case
   .mdx: kebab-case
 

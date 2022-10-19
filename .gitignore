@@ -12,3 +12,9 @@ node_modules
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# vitest
+/coverage
+
+# project
+/dist
