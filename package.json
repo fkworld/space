@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
-    "test": "vitest run",
+    "test": "vitest run --reporter=verbose",
     "test:coverage": "vitest run --coverage",
     "build": "vite build",
     "preview": "vite preview",
