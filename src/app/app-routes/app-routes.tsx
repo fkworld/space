@@ -6,7 +6,7 @@ import { Route404 } from './route-404'
 import { ROUTES } from './route-config'
 import { RouteWrapper } from './route-wrapper'
 
-export const AllRoutes: FC = () => {
+export const AppRoutes: FC = () => {
   const element = useRoutes([
     ...ROUTES.map((config) => {
       return { path: config.path, element: <RouteWrapper config={config} /> }

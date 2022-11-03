@@ -4,11 +4,11 @@ import './app.css'
 import React, { FC, StrictMode } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-import { AllRoutes } from '@/routes'
 import { UserContextProvider } from '@/stores'
 
 import { AppHeader } from './app-header'
 import { AppMenu } from './app-menu'
+import { AppRoutes } from './app-routes'
 
 export const App: FC = () => {
   return (
@@ -26,7 +26,7 @@ export const App: FC = () => {
                 </div>
               </div>
               <div className="flex-auto p-4">
-                <AllRoutes />
+                <AppRoutes />
               </div>
             </div>
           </div>
