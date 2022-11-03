@@ -6,7 +6,7 @@ specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
   '@ls-lint/ls-lint': ^1.11.2
-  '@types/lodash': ^4.14.185
+  '@types/lodash-es': ^4.17.6
   '@types/react': ^18.0.18
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.35.1
@@ -23,7 +23,7 @@ specifiers:
   eslint-plugin-simple-import-sort: ^7.0.0
   husky: ^8.0.1
   lint-staged: ^13.0.3
-  lodash: ^4.17.21
+  lodash-es: ^4.17.21
   postcss: ^8.4.16
   prettier: ^2.7.1
   react: ^18.2.0
@@ -42,7 +42,7 @@ dependencies:
   antd: 4.23.6_biqbaboplfbrettd7655fr4n2y
   autoprefixer: 10.4.12_postcss@8.4.18
   husky: 8.0.1
-  lodash: 4.17.21
+  lodash-es: 4.17.21
   postcss: 8.4.18
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -55,7 +55,7 @@ devDependencies:
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@ls-lint/ls-lint': 1.11.2
-  '@types/lodash': 4.14.186
+  '@types/lodash-es': 4.17.6
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.40.1_ukgdydjtebaxmxfqp5v5ulh64y
@@ -980,10 +980,19 @@ packages:
       }
     dev: true
 
-  /@types/lodash/4.14.186:
+  /@types/lodash-es/4.17.6:
     resolution:
       {
-        integrity: sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==,
+        integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==,
+      }
+    dependencies:
+      '@types/lodash': 4.14.187
+    dev: true
+
+  /@types/lodash/4.14.187:
+    resolution:
+      {
+        integrity: sha512-MrO/xLXCaUgZy3y96C/iOsaIqZSeupyTImKClHunL5GrmaiII2VwvWmLBu2hwa0Kp0sV19CsyjtrTc/Fx8rg/A==,
       }
     dev: true
 
@@ -3986,6 +3995,13 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution:
+      {
+        integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==,
+      }
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution:
