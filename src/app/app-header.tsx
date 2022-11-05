@@ -8,19 +8,10 @@ import {
 import { Avatar, Dropdown, Menu, MenuProps, Tooltip } from 'antd'
 import { FC } from 'react'
 
-import { useUser } from '@/stores'
-
 import { APP_LOGO, APP_NAME } from './app-config'
 
 export const AppHeader: FC = () => {
-  const { user } = useUser()
-
   const menuItems: MenuProps['items'] = [
-    {
-      type: 'group',
-      label: `欢迎 ${user.username}`,
-    },
-    { type: 'divider' },
     {
       type: 'group',
       label: `账号`,
