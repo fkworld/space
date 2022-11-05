@@ -1,12 +1,4 @@
-import React, {
-  createContext,
-  Dispatch,
-  FC,
-  SetStateAction,
-  useContext,
-  useMemo,
-  useState,
-} from 'react'
+import { createContext, Dispatch, FC, SetStateAction, useContext, useMemo, useState } from 'react'
 
 type User = {
   username: string

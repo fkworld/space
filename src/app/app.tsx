@@ -1,7 +1,7 @@
 import 'antd/dist/antd.compact.css'
 import './app.css'
 
-import React, { FC, StrictMode } from 'react'
+import { FC, StrictMode } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import { UserContextProvider } from '@/stores'

@@ -1,5 +1,5 @@
 import { Skeleton } from 'antd'
-import React, { FC, Suspense } from 'react'
+import { FC, Suspense } from 'react'
 
 import { RouteConfig } from './route-config'
 

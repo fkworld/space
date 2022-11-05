@@ -6,7 +6,7 @@ import {
   NotificationOutlined,
 } from '@ant-design/icons'
 import { Avatar, Dropdown, Menu, MenuProps, Tooltip } from 'antd'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { useUser } from '@/stores'
 

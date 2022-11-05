@@ -1,5 +1,5 @@
 import { Menu } from 'antd'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { MENU_CONFIG } from './menu-config'
 
