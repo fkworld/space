@@ -10,4 +10,8 @@ export const ROUTES: RouteConfig[] = [
     path: '/home',
     Component: lazy(() => import('@/pages/home')),
   },
+  {
+    path: '/example/url',
+    Component: lazy(() => import('@/pages/example-url')),
+  },
 ]
