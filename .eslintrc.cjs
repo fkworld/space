@@ -26,6 +26,19 @@ module.exports = {
     'react/self-closing-comp': 'error',
   },
   overrides: [
+    // 在 index 文件中禁用代码逻辑，只允许使用 import/export 语句
+    {
+      files: ['**/index.ts', '**/index.tsx', '**/index.js', '**/index.jsx'],
+      rules: {
+        'no-restricted-syntax': [
+          'error',
+          { selector: 'VariableDeclaration', message: 'Code logic is not allowed in index file.' },
+          { selector: 'FunctionDeclaration', message: 'Code logic is not allowed in index file.' },
+          { selector: 'ClassDeclaration', message: 'Code logic is not allowed in index file.' },
+        ],
+      },
+    },
+    // 对特殊文件，允许使用 export default
     {
       files: ['./vite.config.js', './src/pages/*/index.ts'],
       rules: { 'import/no-default-export': 'off' },
