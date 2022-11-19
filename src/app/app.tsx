@@ -1,4 +1,4 @@
-import 'antd/dist/antd.compact.css'
+import 'antd/dist/reset.css'
 import './app.css'
 
 import { FC, StrictMode } from 'react'
