@@ -14,6 +14,7 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'react'],
   rules: {
+    eqeqeq: 'error',
     // import/export 排序，参考 https://github.com/lydell/eslint-plugin-simple-import-sort#example-configuration
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
