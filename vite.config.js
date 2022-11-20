@@ -25,4 +25,14 @@ export default defineConfig({
     host: true,
     port: 2077,
   },
+  build: {
+    assetsDir: '.',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
+    },
+  },
 })
