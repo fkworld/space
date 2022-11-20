@@ -54,7 +54,19 @@ const USER_MENU_ITEMS: MenuProps['items'] = [
     label: '链接',
     children: [
       { key: 'changelog', label: '更新日志', icon: <NotificationOutlined /> },
-      { key: 'gitRepo', label: 'Git 仓库', icon: <GithubOutlined /> },
+      {
+        key: 'gitRepo',
+        label: (
+          <a
+            href="https://github.com/fkworld/template-data-management"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Git 仓库
+          </a>
+        ),
+        icon: <GithubOutlined />,
+      },
     ],
   },
 ]
