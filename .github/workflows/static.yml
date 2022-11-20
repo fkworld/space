@@ -34,13 +34,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      # 为了解决 react-router 在 github pages 中的刷新后 404 问题，所以需要 copy 出一个 404.html 文件
       - name: Build project
-        run: |
-          npm install -g pnpm
-          pnpm install --prod
-          pnpm build
-          cp dist/index.html dist/404.html
+        run: sh ./scripts/github-ci.sh
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
