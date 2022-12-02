@@ -25,12 +25,6 @@ pnpm dev
   - [vite](https://github.com/vitejs/vite)
 - 测试
   - [vitest](https://github.com/vitest-dev/vitest)
-- css
-  - [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
-- 组件库
-  - [antd](https://github.com/ant-design/ant-design)
-- 路由
-  - [react-router-dom](https://github.com/remix-run/react-router)
 - 工程化
   - [prettier](https://github.com/prettier/prettier)
   - [eslint](https://github.com/eslint/eslint)
@@ -38,3 +32,11 @@ pnpm dev
   - [ls-lint](https://github.com/loeffel-io/ls-lint)
   - [lint-staged](https://github.com/okonet/lint-staged)
   - [husky](https://github.com/typicode/husky)
+- css
+  - [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+- 路由
+  - [react-router-dom](https://github.com/remix-run/react-router)
+- 组件库
+  - [antd](https://github.com/ant-design/ant-design)
+- 状态管理
+  - [zustand](https://github.com/pmndrs/zustand)
