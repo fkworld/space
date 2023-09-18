@@ -1,16 +1,16 @@
-import { Skeleton } from 'antd'
-import { FC, Suspense } from 'react'
+import { Skeleton } from "antd";
+import { FC, Suspense } from "react";
 
-import { RouteConfig } from './route-config'
+import { RouteConfig } from "./route-config";
 
 export const RouteWrapper: FC<{ config: RouteConfig }> = (props) => {
   const {
     config: { Component },
-  } = props
+  } = props;
 
   return (
     <Suspense fallback={<Skeleton active />}>
       <Component />
     </Suspense>
-  )
-}
+  );
+};

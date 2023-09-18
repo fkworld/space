@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['master']
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,7 +17,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       - name: Prepare node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: Build project
         run: sh ./scripts/github-ci.sh
       - name: Setup Pages
@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist'
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
