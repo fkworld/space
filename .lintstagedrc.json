@@ -1,9 +1,4 @@
 {
-  "**/*.{ts,tsx}": [
-    "eslint --fix",
-    "stylelint --fix --allow-empty-input",
-    "prettier --write"
-  ],
-  "**/*.css": ["stylelint --fix", "prettier --write"],
+  "**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
   "**/*.{js,cjs,mjs,md,json,html}": ["prettier --write"]
 }

@@ -11,6 +11,7 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "@unocss",
     "prettier"
   ],
   "plugins": ["@typescript-eslint", "simple-import-sort", "import", "react"],
@@ -58,7 +59,11 @@
     },
     // 对特殊文件，允许 export default 和基础逻辑
     {
-      "files": ["./vite.config.ts", "./src/pages/*/index.tsx"],
+      "files": [
+        "./src/pages/*/index.tsx",
+        "./uno.config.ts",
+        "./vite.config.ts"
+      ],
       "rules": {
         "import/no-default-export": "off",
         "no-restricted-syntax": "off"

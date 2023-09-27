@@ -1,6 +1,6 @@
 import "antd/dist/reset.css";
+import "virtual:uno.css";
 
-import { css } from "@linaria/core";
 import { Divider } from "antd";
 import { FC, StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -14,37 +14,14 @@ export const App: FC = () => {
   return (
     <StrictMode>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <div
-          className={css`
-            display: flex;
-            width: 100vw;
-            height: 100vh;
-            background-color: whitesmoke;
-          `}
-        >
-          <div
-            className={css`
-              display: flex;
-              flex: none;
-              flex-direction: column;
-              width: 300px;
-              padding: 24px;
-              background-color: white;
-              border-right: 1px solid rgb(0 0 0 / 10%);
-            `}
-          >
+        <div className="h-screen w-screen flex">
+          <div className="w-300px flex flex-none flex-col border-r-1 border-r-black/10 border-r-solid p-6">
             <AppLogo />
             <Divider />
             <AppMenu />
           </div>
 
-          <div
-            className={css`
-              flex: auto;
-              padding: 24px;
-              background-color: white;
-            `}
-          >
+          <div className="flex-auto p-6">
             <AppRoutes />
           </div>
         </div>
