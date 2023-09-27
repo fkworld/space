@@ -1,22 +1,24 @@
-import { HomeOutlined } from "@ant-design/icons";
-import { ConfigProvider, Menu, MenuProps } from "antd";
+import { ConfigProvider, Menu } from "antd";
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import { MENU } from "@/configs/menu";
 
 export const AppMenu: FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <ConfigProvider
       theme={{ components: { Menu: { activeBarBorderWidth: 0 } } }}
     >
-      <Menu mode="inline" theme="light" items={APP_MENU_ITEMS} />
+      <Menu
+        mode="inline"
+        theme="light"
+        defaultSelectedKeys={[location.pathname]}
+        onClick={(v) => navigate(v.key)}
+        items={MENU}
+      />
     </ConfigProvider>
   );
 };
-
-const APP_MENU_ITEMS: MenuProps["items"] = [
-  {
-    key: "home",
-    icon: <HomeOutlined />,
-    label: <Link to="/">首页</Link>,
-  },
-];

@@ -1,1 +1,1 @@
-export const APP_NAME = "fkworld";
+export const APP_NAME = "fkworld's space";

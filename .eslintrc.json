@@ -32,8 +32,11 @@
     "react/self-closing-comp": "error",
     // react hooks 的依赖项检查
     "react-hooks/exhaustive-deps": "error",
-    // Always use T[] or readonly T[] for all array types. 参考 https://typescript-eslint.io/rules/array-type/
-    "@typescript-eslint/array-type": "error"
+    // Always use Array<T> or ReadonlyArray<T> for all array types. 参考 https://typescript-eslint.io/rules/array-type/
+    "@typescript-eslint/array-type": [
+      "error",
+      { "default": "generic", "readonly": "generic" }
+    ]
   },
   "overrides": [
     {
