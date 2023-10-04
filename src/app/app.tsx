@@ -14,13 +14,13 @@ export const App: FC = () => {
     <StrictMode>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="h-screen w-screen flex">
-          <div className="w-300px flex flex-none flex-col border-r-1 border-r-black/10 border-r-solid p-6">
+          <div className="flex-0 w-300px flex flex-col border-r-1 border-r-black/10 border-r-solid p-6">
             <AppLogo />
             <Divider />
             <AppMenu />
           </div>
 
-          <div className="flex-auto p-6">
+          <div className="flex-1 overflow-x-hidden overflow-y-scroll p-6">
             <AppRoutes />
           </div>
         </div>
