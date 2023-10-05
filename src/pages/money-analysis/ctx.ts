@@ -1,5 +1,5 @@
 import { parse } from "papaparse";
-import { createContext, useMemo, useState } from "react";
+import { createContext, useState } from "react";
 
 import { FileData, fileData2ListData, listData2PieData } from "./common";
 
@@ -9,17 +9,12 @@ export function useCtxInit() {
   const [fileText, setFileText] = useState("");
   const [currentMonth, setCurrentMonth] = useState<string>("");
 
-  const fileData = useMemo(() => {
-    const { data } = parse(fileText, { header: true, skipEmptyLines: true });
-    return data as FileData;
-  }, [fileText]);
+  const fileData = parse(fileText, { header: true, skipEmptyLines: true })
+    .data as FileData;
 
-  const listData = useMemo(() => fileData2ListData(fileData), [fileData]);
+  const listData = fileData2ListData(fileData);
 
-  const pieData = useMemo(
-    () => listData2PieData(listData, currentMonth),
-    [listData, currentMonth],
-  );
+  const pieData = listData2PieData(listData, currentMonth);
 
   return {
     fileText,
