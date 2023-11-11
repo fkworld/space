@@ -2,14 +2,14 @@ import { ConfigProvider, Menu } from 'antd';
 import { FC } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { ROUTES } from '@/configs/routes';
+import { displayRoutePath, ROUTES } from '@/configs/routes';
 
 export const AppMenu: FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const items = ROUTES.filter((v) => v.isMenu).map((v) => {
-    return { key: v.path, label: v.path };
+    return { key: v.path, label: displayRoutePath(v.path) };
   });
 
   return (

@@ -1,8 +1,8 @@
-import { Result, Skeleton } from 'antd';
+import { Result, Skeleton, Typography } from 'antd';
 import { FC, Suspense } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import { ROUTES } from '@/configs/routes';
+import { displayRoutePath, ROUTES } from '@/configs/routes';
 
 export const AppRoutes: FC = () => {
   const element = useRoutes([
@@ -10,9 +10,12 @@ export const AppRoutes: FC = () => {
       return {
         path: config.path,
         element: (
-          <Suspense fallback={<Skeleton active />}>
-            <config.component />
-          </Suspense>
+          <>
+            <Typography.Title level={2}>{displayRoutePath(config.path)}</Typography.Title>
+            <Suspense fallback={<Skeleton active />}>
+              <config.component />
+            </Suspense>
+          </>
         ),
       };
     }),
