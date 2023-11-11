@@ -26,15 +26,6 @@ export function List() {
         读取本地 CSV 文件
       </Button>
       <Table<ListData[number]>
-        dataSource={listData}
-        rowKey={(record) => `${record.time}_${record.owner}`}
-        scroll={{ x: true }}
-        rowSelection={{
-          type: "radio",
-          onChange: (_, selectedRows) => {
-            setCurrentMonth?.(selectedRows[0].time);
-          },
-        }}
         columns={[
           {
             dataIndex: "time",
@@ -47,11 +38,7 @@ export function List() {
             title: "owner",
             fixed: true,
             render: (_, record) => {
-              return (
-                getOwnerConfig(record.owner)?.tag ?? (
-                  <Tag color="error">{record.owner}</Tag>
-                )
-              );
+              return getOwnerConfig(record.owner)?.tag ?? <Tag color="error">{record.owner}</Tag>;
             },
           },
           {
@@ -81,6 +68,15 @@ export function List() {
             render: (_, record) => <SDMoney value={record.housingFund} />,
           },
         ]}
+        dataSource={listData}
+        rowKey={(record) => `${record.time}_${record.owner}`}
+        rowSelection={{
+          type: "radio",
+          onChange: (_, selectedRows) => {
+            setCurrentMonth?.(selectedRows[0].time);
+          },
+        }}
+        scroll={{ x: true }}
       />
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 import react from "@vitejs/plugin-react";
 import { execSync } from "child_process";
 import { resolve } from "path";
@@ -18,12 +19,8 @@ export default defineConfig({
   },
   define: {
     __APP_VERSION__: JSON.stringify(version),
-    __APP_COMMIT_HASH__: JSON.stringify(
-      execSync('git log --pretty=format:"%h" -1').toString(),
-    ),
-    __APP_COMMIT_DATE__: JSON.stringify(
-      execSync('git log --pretty=format:"%ai" -1').toString(),
-    ),
+    __APP_COMMIT_HASH__: JSON.stringify(execSync('git log --pretty=format:"%h" -1').toString()),
+    __APP_COMMIT_DATE__: JSON.stringify(execSync('git log --pretty=format:"%ai" -1').toString()),
   },
   server: {
     open: true,

@@ -1,12 +1,4 @@
-# mac
 .DS_Store
-
-# node
+dist
 node_modules
-
-# vitest
-/coverage
-
-# project
-/dist
-/src/pages/money-analysis/source.csv
+src/pages/money-analysis/source.csv

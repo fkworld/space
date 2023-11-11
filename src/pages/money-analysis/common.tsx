@@ -78,16 +78,9 @@ export function fileData2ListData(fileData: FileData): ListData {
   });
 }
 
-export function listData2PieData(
-  listData: ListData,
-  currentMonth: string,
-): PieData {
-  const fySource = listData.find(
-    (v) => v.time === currentMonth && v.owner === "fy",
-  );
-  const lxqSource = listData.find(
-    (v) => v.time === currentMonth && v.owner === "lxq",
-  );
+export function listData2PieData(listData: ListData, currentMonth: string): PieData {
+  const fySource = listData.find((v) => v.time === currentMonth && v.owner === "fy");
+  const lxqSource = listData.find((v) => v.time === currentMonth && v.owner === "lxq");
 
   const fy = {
     cash: Number(fySource?.cash) ?? 0,

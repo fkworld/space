@@ -2,22 +2,24 @@ import { ConfigProvider, Menu } from "antd";
 import { FC } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { MENU } from "@/configs/menu";
+import { ROUTES } from "@/configs/routes";
 
 export const AppMenu: FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const items = ROUTES.filter((v) => v.isMenu).map((v) => {
+    return { key: v.path, label: v.path };
+  });
+
   return (
-    <ConfigProvider
-      theme={{ components: { Menu: { activeBarBorderWidth: 0 } } }}
-    >
+    <ConfigProvider theme={{ components: { Menu: { activeBarBorderWidth: 0 } } }}>
       <Menu
+        defaultSelectedKeys={[location.pathname]}
+        items={items}
         mode="inline"
         theme="light"
-        defaultSelectedKeys={[location.pathname]}
         onClick={(v) => navigate(v.key)}
-        items={MENU}
       />
     </ConfigProvider>
   );

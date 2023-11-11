@@ -2,19 +2,27 @@
   "root": true,
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "@unocss",
-    "prettier"
+    "@unocss"
   ],
   "plugins": ["@typescript-eslint", "simple-import-sort", "import", "react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     // 使用三等号
     "eqeqeq": "error",
@@ -23,53 +31,35 @@
     // import/export 排序，参考 https://github.com/lydell/eslint-plugin-simple-import-sort#example-configuration
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "import/first": ["error", "disable-absolute-first"],
+    "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     // 禁用 export default
     "import/no-default-export": "error",
+    // 禁用引入不在 dependencies 中的依赖
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": false }],
     // react 组件自闭合
     "react/self-closing-comp": "error",
     // react hooks 的依赖项检查
     "react-hooks/exhaustive-deps": "error",
+    // react jsx props 排序
+    "react/jsx-sort-props": ["error", { "reservedFirst": true, "callbacksLast": true }],
     // Always use Array<T> or ReadonlyArray<T> for all array types. 参考 https://typescript-eslint.io/rules/array-type/
-    "@typescript-eslint/array-type": [
-      "error",
-      { "default": "generic", "readonly": "generic" }
-    ]
+    "@typescript-eslint/array-type": ["error", { "default": "generic" }]
   },
   "overrides": [
+    // 对特殊文件，允许 export default
     {
-      "files": ["**/index.ts", "**/index.tsx", "**/index.js", "**/index.jsx"],
+      "files": ["src/pages/*/index.tsx"],
       "rules": {
-        // 在 index 文件中禁用代码逻辑，只允许使用 import/export 语句
-        "no-restricted-syntax": [
-          "error",
-          {
-            "selector": "VariableDeclaration",
-            "message": "Code logic is not allowed in index file."
-          },
-          {
-            "selector": "FunctionDeclaration",
-            "message": "Code logic is not allowed in index file."
-          },
-          {
-            "selector": "ClassDeclaration",
-            "message": "Code logic is not allowed in index file."
-          }
-        ]
+        "import/no-default-export": "off"
       }
     },
-    // 对特殊文件，允许 export default 和基础逻辑
+    // 对 test 文件，允许引入 devDependencies
     {
-      "files": [
-        "./src/pages/*/index.tsx",
-        "./uno.config.ts",
-        "./vite.config.ts"
-      ],
+      "files": ["src/**/*.test.ts"],
       "rules": {
-        "import/no-default-export": "off",
-        "no-restricted-syntax": "off"
+        "import/no-extraneous-dependencies": "off"
       }
     }
   ]

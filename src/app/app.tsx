@@ -1,6 +1,3 @@
-import "antd/dist/reset.css";
-import "virtual:uno.css";
-
 import { Divider } from "antd";
 import { FC, StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -14,7 +11,7 @@ export const App: FC = () => {
     <StrictMode>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="h-screen w-screen flex">
-          <div className="flex-0 w-300px flex flex-col border-r-1 border-r-black/10 border-r-solid p-6">
+          <div className="w-300px flex flex-none flex-col border-r-1 border-r-black/10 border-r-solid p-6">
             <AppLogo />
             <Divider />
             <AppMenu />

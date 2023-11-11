@@ -20,35 +20,26 @@ export const Analysis: FC = () => {
 
       {currentMonth && pieData ? (
         <div className="flex items-start gap-16">
-          {[
-            pieData.statisticPie,
-            pieData.allPie,
-            pieData.fyPie,
-            pieData.lxqPie,
-          ].map((item) => {
+          {[pieData.statisticPie, pieData.allPie, pieData.fyPie, pieData.lxqPie].map((item) => {
             return (
               <div key={item.title} className="flex-1">
                 {item.title} - {sdMoney(item.sum)}
                 <Pie
+                  angleField="value"
+                  className="vertical-start"
+                  color={(v) => {
+                    return getOwnerConfig(v.type)?.color ?? getKeyConfig(v.type)?.color ?? gray[5];
+                  }}
+                  colorField="type"
                   data={Object.entries(item.values).map(([type, value]) => {
                     return { type, value };
                   })}
-                  className="vertical-start"
-                  padding={0}
-                  angleField="value"
-                  colorField="type"
-                  color={(v) => {
-                    return (
-                      getOwnerConfig(v.type)?.color ??
-                      getKeyConfig(v.type)?.color ??
-                      gray[5]
-                    );
-                  }}
                   label={{
                     type: "inner",
                     content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
                   }}
                   legend={false}
+                  padding={0}
                 />
               </div>
             );
