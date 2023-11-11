@@ -1,10 +1,10 @@
-import { Button, Table, Tag, Typography } from "antd";
-import { useContext } from "react";
+import { Button, Table, Tag, Typography } from 'antd';
+import { useContext } from 'react';
 
-import { SDMoney } from "@/components/standard-display/sd-money";
+import { SDMoney } from '@/components/standard-display/sd-money';
 
-import { getOwnerConfig, ListData } from "./common";
-import { Ctx } from "./ctx";
+import { getOwnerConfig, ListData } from './common';
+import { Ctx } from './ctx';
 
 export function List() {
   const { listData, setCurrentMonth, setFileText } = useContext(Ctx);
@@ -16,7 +16,7 @@ export function List() {
         type="primary"
         onClick={async () => {
           const [fileHandle] = await window.showOpenFilePicker({
-            types: [{ accept: { "text/csv": [".csv"] } }],
+            types: [{ accept: { 'text/csv': ['.csv'] } }],
           });
           const file = await fileHandle.getFile();
           const text = await file.text();
@@ -28,50 +28,50 @@ export function List() {
       <Table<ListData[number]>
         columns={[
           {
-            dataIndex: "time",
-            title: "time",
+            dataIndex: 'time',
+            title: 'time',
             fixed: true,
             render: (_, record) => <Tag>{record.time}</Tag>,
           },
           {
-            dataIndex: "owner",
-            title: "owner",
+            dataIndex: 'owner',
+            title: 'owner',
             fixed: true,
             render: (_, record) => {
               return getOwnerConfig(record.owner)?.tag ?? <Tag color="error">{record.owner}</Tag>;
             },
           },
           {
-            dataIndex: "total",
-            title: "total",
+            dataIndex: 'total',
+            title: 'total',
             fixed: true,
             render: (_, record) => <SDMoney value={record.total} />,
           },
           {
-            dataIndex: "cash",
-            title: "cash",
+            dataIndex: 'cash',
+            title: 'cash',
             render: (_, record) => <SDMoney value={record.cash} />,
           },
           {
-            dataIndex: "bankSavings",
-            title: "bankSavings",
+            dataIndex: 'bankSavings',
+            title: 'bankSavings',
             render: (_, record) => <SDMoney value={record.bankSavings} />,
           },
           {
-            dataIndex: "investment",
-            title: "investment",
+            dataIndex: 'investment',
+            title: 'investment',
             render: (_, record) => <SDMoney value={record.investment} />,
           },
           {
-            dataIndex: "housingFund",
-            title: "housingFund",
+            dataIndex: 'housingFund',
+            title: 'housingFund',
             render: (_, record) => <SDMoney value={record.housingFund} />,
           },
         ]}
         dataSource={listData}
         rowKey={(record) => `${record.time}_${record.owner}`}
         rowSelection={{
-          type: "radio",
+          type: 'radio',
           onChange: (_, selectedRows) => {
             setCurrentMonth?.(selectedRows[0].time);
           },

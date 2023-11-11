@@ -1,8 +1,8 @@
-import { ConfigProvider, Menu } from "antd";
-import { FC } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { ConfigProvider, Menu } from 'antd';
+import { FC } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { ROUTES } from "@/configs/routes";
+import { ROUTES } from '@/configs/routes';
 
 export const AppMenu: FC = () => {
   const location = useLocation();

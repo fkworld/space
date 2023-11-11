@@ -1,7 +1,7 @@
-import { blue, gold, green, red } from "@ant-design/colors";
-import { Tag } from "antd";
-import { chain } from "lodash";
-import { ReactNode } from "react";
+import { blue, gold, green, red } from '@ant-design/colors';
+import { Tag } from 'antd';
+import { chain } from 'lodash';
+import { ReactNode } from 'react';
 
 export type FileData = Array<{
   time: string;
@@ -25,7 +25,7 @@ export type PieData = {
     totalLxq: number;
   };
   statisticPie: {
-    title: "statistic";
+    title: 'statistic';
     sum: number;
     values: {
       fy: number;
@@ -33,7 +33,7 @@ export type PieData = {
     };
   };
   allPie: {
-    title: "all";
+    title: 'all';
     sum: number;
     values: {
       cash: number;
@@ -43,7 +43,7 @@ export type PieData = {
     };
   };
   fyPie: {
-    title: "fy";
+    title: 'fy';
     sum: number;
     values: {
       cash: number;
@@ -53,7 +53,7 @@ export type PieData = {
     };
   };
   lxqPie: {
-    title: "lxq";
+    title: 'lxq';
     sum: number;
     values: {
       cash: number;
@@ -69,7 +69,7 @@ export function fileData2ListData(fileData: FileData): ListData {
     return {
       ...v,
       total: chain(v)
-        .pick(["cash", "bankSavings", "investment", "housingFund"])
+        .pick(['cash', 'bankSavings', 'investment', 'housingFund'])
         .values()
         .map((v) => Number(v) ?? 0)
         .sum()
@@ -79,8 +79,8 @@ export function fileData2ListData(fileData: FileData): ListData {
 }
 
 export function listData2PieData(listData: ListData, currentMonth: string): PieData {
-  const fySource = listData.find((v) => v.time === currentMonth && v.owner === "fy");
-  const lxqSource = listData.find((v) => v.time === currentMonth && v.owner === "lxq");
+  const fySource = listData.find((v) => v.time === currentMonth && v.owner === 'fy');
+  const lxqSource = listData.find((v) => v.time === currentMonth && v.owner === 'lxq');
 
   const fy = {
     cash: Number(fySource?.cash) ?? 0,
@@ -109,22 +109,22 @@ export function listData2PieData(listData: ListData, currentMonth: string): PieD
   return {
     statistic,
     statisticPie: {
-      title: "statistic",
+      title: 'statistic',
       sum: statistic.total,
       values: { fy: statistic.totalFy, lxq: statistic.totalLxq },
     },
     allPie: {
-      title: "all",
+      title: 'all',
       sum: statistic.total,
       values: all,
     },
     fyPie: {
-      title: "fy",
+      title: 'fy',
       sum: statistic.totalFy,
       values: fy,
     },
     lxqPie: {
-      title: "lxq",
+      title: 'lxq',
       sum: statistic.totalLxq,
       values: lxq,
     },
@@ -138,12 +138,12 @@ export function getOwnerConfig(owner?: string):
     }
   | undefined {
   switch (owner) {
-    case "fy":
+    case 'fy':
       return {
         tag: <Tag color="blue">fy</Tag>,
         color: blue[5],
       };
-    case "lxq":
+    case 'lxq':
       return {
         tag: <Tag color="gold">lxq</Tag>,
         color: gold[5],
@@ -157,13 +157,13 @@ export function getKeyConfig(key?: string):
     }
   | undefined {
   switch (key) {
-    case "cash":
+    case 'cash':
       return { color: green[5] };
-    case "bankSavings":
+    case 'bankSavings':
       return { color: green[3] };
-    case "investment":
+    case 'investment':
       return { color: red[5] };
-    case "housingFund":
+    case 'housingFund':
       return { color: red[3] };
   }
 }

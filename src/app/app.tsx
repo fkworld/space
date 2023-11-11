@@ -1,10 +1,10 @@
-import { Divider } from "antd";
-import { FC, StrictMode } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { Divider } from 'antd';
+import { FC, StrictMode } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import { AppLogo } from "./app-logo";
-import { AppMenu } from "./app-menu";
-import { AppRoutes } from "./app-routes";
+import { AppLogo } from './app-logo';
+import { AppMenu } from './app-menu';
+import { AppRoutes } from './app-routes';
 
 export const App: FC = () => {
   return (

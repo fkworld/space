@@ -1,12 +1,12 @@
-import { Pie } from "@ant-design/charts";
-import { gray } from "@ant-design/colors";
-import { Empty, Tag, Typography } from "antd";
-import { FC, useContext } from "react";
+import { Pie } from '@ant-design/charts';
+import { gray } from '@ant-design/colors';
+import { Empty, Tag, Typography } from 'antd';
+import { FC, useContext } from 'react';
 
-import { sdMoney } from "@/components/standard-display/sd-money";
+import { sdMoney } from '@/components/standard-display/sd-money';
 
-import { getKeyConfig, getOwnerConfig } from "./common";
-import { Ctx } from "./ctx";
+import { getKeyConfig, getOwnerConfig } from './common';
+import { Ctx } from './ctx';
 
 export const Analysis: FC = () => {
   const { currentMonth, pieData } = useContext(Ctx);
@@ -35,7 +35,7 @@ export const Analysis: FC = () => {
                     return { type, value };
                   })}
                   label={{
-                    type: "inner",
+                    type: 'inner',
                     content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
                   }}
                   legend={false}

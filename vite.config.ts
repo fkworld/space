@@ -1,20 +1,20 @@
 /* eslint-disable import/no-default-export */
-import react from "@vitejs/plugin-react";
-import { execSync } from "child_process";
-import { resolve } from "path";
-import unocss from "unocss/vite";
-import { defineConfig } from "vite";
+import react from '@vitejs/plugin-react';
+import { execSync } from 'child_process';
+import { resolve } from 'path';
+import unocss from 'unocss/vite';
+import { defineConfig } from 'vite';
 
-import { version } from "./package.json";
+import { version } from './package.json';
 
 export default defineConfig({
   plugins: [react(), unocss()],
   // 这个 base 是 github workflow 需要的，实际开发时可以为空
   // 特别注意，base 还影响到路由构建，需要要给 BrowserRouter 组件增加 basename props
-  base: "/space/",
+  base: '/space/',
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src/"),
+      '@': resolve(__dirname, './src/'),
     },
   },
   define: {
@@ -28,11 +28,11 @@ export default defineConfig({
     port: 2077,
   },
   build: {
-    assetsDir: ".",
+    assetsDir: '.',
     rollupOptions: {
       output: {
         manualChunks: {
-          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
         },
       },
     },

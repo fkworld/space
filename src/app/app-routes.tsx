@@ -1,8 +1,8 @@
-import { Result, Skeleton } from "antd";
-import { FC, Suspense } from "react";
-import { Navigate, useRoutes } from "react-router-dom";
+import { Result, Skeleton } from 'antd';
+import { FC, Suspense } from 'react';
+import { Navigate, useRoutes } from 'react-router-dom';
 
-import { ROUTES } from "@/configs/routes";
+import { ROUTES } from '@/configs/routes';
 
 export const AppRoutes: FC = () => {
   const element = useRoutes([
@@ -16,10 +16,10 @@ export const AppRoutes: FC = () => {
         ),
       };
     }),
-    { path: "/403", element: <Route403 /> },
-    { path: "/404", element: <Route404 /> },
-    { path: "/", element: <Navigate to="/home" /> },
-    { path: "*", element: <Route404 /> },
+    { path: '/403', element: <Route403 /> },
+    { path: '/404', element: <Route404 /> },
+    { path: '/', element: <Navigate to="/home" /> },
+    { path: '*', element: <Route404 /> },
   ]);
 
   return element;

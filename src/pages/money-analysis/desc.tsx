@@ -1,5 +1,5 @@
-import { Typography } from "antd";
-import { FC } from "react";
+import { Typography } from 'antd';
+import { FC } from 'react';
 
 export const Desc: FC = () => {
   return (

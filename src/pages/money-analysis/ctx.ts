@@ -1,13 +1,13 @@
-import { parse } from "papaparse";
-import { createContext, useState } from "react";
+import { parse } from 'papaparse';
+import { createContext, useState } from 'react';
 
-import { FileData, fileData2ListData, listData2PieData } from "./common";
+import { FileData, fileData2ListData, listData2PieData } from './common';
 
 export const Ctx = createContext<Partial<ReturnType<typeof useCtxInit>>>({});
 
 export function useCtxInit() {
-  const [fileText, setFileText] = useState("");
-  const [currentMonth, setCurrentMonth] = useState<string>("");
+  const [fileText, setFileText] = useState('');
+  const [currentMonth, setCurrentMonth] = useState<string>('');
 
   const fileData = parse(fileText, { header: true, skipEmptyLines: true }).data as FileData;
 

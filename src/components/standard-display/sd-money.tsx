@@ -1,5 +1,5 @@
-import { Tag } from "antd";
-import { FC } from "react";
+import { Tag } from 'antd';
+import { FC } from 'react';
 
 export const SDMoney: FC<{
   value?: string | number;
@@ -12,7 +12,7 @@ export const SDMoney: FC<{
     return <Tag>empty</Tag>;
   }
 
-  return valueNumber.toLocaleString("zh-CN", { maximumFractionDigits: 0 });
+  return valueNumber.toLocaleString('zh-CN', { maximumFractionDigits: 0 });
 };
 
 export function sdMoney(value?: string | number): string | undefined {
@@ -20,5 +20,5 @@ export function sdMoney(value?: string | number): string | undefined {
 
   if (Number.isNaN(valueNumber)) return;
 
-  return valueNumber.toLocaleString("zh-CN", { maximumFractionDigits: 0 });
+  return valueNumber.toLocaleString('zh-CN', { maximumFractionDigits: 0 });
 }
