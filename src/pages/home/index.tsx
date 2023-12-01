@@ -1,3 +1,3 @@
 export default function HomePage() {
-  return <span>Welcome</span>;
+  return <span>Welcome to fkworld space.</span>;
 }

@@ -1,4 +1,4 @@
-import { Loader } from '@mantine/core';
+import { Loader, Title } from '@mantine/core';
 import { FC, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ export const AppRoutes: FC = () => {
             key={config.path}
             element={
               <>
-                <div className="mb-16">{config.path}</div>
+                <Title order={2}>{config.path}</Title>
                 <Suspense fallback={<Loader />}>
                   <config.component />
                 </Suspense>
