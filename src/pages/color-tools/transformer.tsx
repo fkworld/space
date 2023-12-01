@@ -1,68 +1,90 @@
-import { Button, Card, Form, Input, InputNumber, Typography } from 'antd';
+import { ActionIcon, CopyButton, NumberInput, TextInput } from '@mantine/core';
+import { useForm } from '@mantine/form';
+import { IconCheck, IconCopy } from '@tabler/icons-react';
 import Color from 'color';
 import { FC, useState } from 'react';
-
-type FormValues = {
-  color: string;
-  opacity?: number;
-};
 
 export const Transformer: FC = () => {
   const [color, setColor] = useState<Color>(new Color('#00000080'));
 
-  const colorTargets: Array<{ title: string; value: string | number }> = [
+  const form = useForm({
+    initialValues: {
+      colorString: color.hexa(),
+      colorAlpha: color.alpha(),
+    },
+  });
+
+  const colorTargets: Array<{ title: string; value: string }> = [
     { title: 'rgb', value: `rgb(${color.red()},${color.green()},${color.blue()})` },
-    { title: 'rgba', value: `rgba(${color.red()},${color.green()},${color.blue()},${color.alpha().toFixed(1)})` },
+    { title: 'rgba', value: `rgba(${color.red()},${color.green()},${color.blue()},${color.alpha().toFixed(2)})` },
     { title: 'hex', value: color.hex() },
     { title: 'hexa', value: color.hexa() },
-    { title: 'opacity', value: color.alpha() },
+    { title: 'opacity', value: color.alpha().toFixed(2) },
   ];
 
-  function onFinish(formValues: FormValues) {
-    let newColor = new Color(formValues.color);
-    if (formValues.opacity) {
-      newColor = newColor.alpha(formValues.opacity);
+  function submitColorString(colorString: string) {
+    try {
+      const newColor = new Color(colorString);
+      setColor(newColor);
+      form.setFieldValue('colorAlpha', newColor.alpha());
+    } catch (error) {
+      form.setFieldError('colorString', (error as Error).message);
     }
-    setColor(newColor);
   }
 
   return (
-    <div>
-      <Typography.Title level={3}>Transformer</Typography.Title>
-      <div className="flex gap-16px">
-        <Card className="flex-1" title="color source">
-          <Form<FormValues> layout="vertical" onFinish={onFinish}>
-            <Form.Item<FormValues>
-              extra="rgb/rgba/hex/hexa 字符串"
-              label="color"
-              name="color"
-              rules={[{ required: true }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item<FormValues> extra="0-1，如果写了值，则会覆盖 color" label="opacity" name="opacity">
-              <InputNumber max={1} min={0} />
-            </Form.Item>
-            <Form.Item className="text-right">
-              <Button htmlType="submit" type="primary">
-                submit
-              </Button>
-            </Form.Item>
-          </Form>
-        </Card>
+    <div className="flex flex-col gap-16">
+      <TextInput
+        {...form.getInputProps('colorString')}
+        className="w-256"
+        label="color"
+        onBlur={(e) => {
+          submitColorString(e.target.value);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            submitColorString(e.currentTarget.value);
+          }
+        }}
+      />
 
-        <Card className="flex-1" title="color target">
-          <div className="min-h-100px flex flex-col gap-16px">
-            <div className="h-50px w-50px" style={{ backgroundColor: color.hexa() }} />
-            {colorTargets.map((item) => (
-              <div key={item.title}>
-                <div>{item.title}</div>
-                <Typography.Text copyable>{item.value}</Typography.Text>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
+      <NumberInput
+        {...form.getInputProps('colorAlpha')}
+        className="w-128"
+        decimalScale={2}
+        fixedDecimalScale
+        label="alpha"
+        max={1}
+        min={0}
+        step={0.1}
+        onChange={(value) => {
+          setColor(color.alpha(Number(value)));
+          form.setFieldValue('colorAlpha', Number(value));
+        }}
+      />
+
+      <div
+        className="h-64 w-64"
+        style={{ backgroundColor: color.hexa() }}
+      />
+
+      {colorTargets.map((item) => (
+        <div key={item.title}>
+          <div>{item.title}</div>
+          <div>{item.value}</div>
+          <CopyButton value={item.value}>
+            {({ copied, copy }) => (
+              <ActionIcon
+                color={copied ? 'teal' : 'gray'}
+                variant="subtle"
+                onClick={copy}
+              >
+                {copied ? <IconCheck /> : <IconCopy />}
+              </ActionIcon>
+            )}
+          </CopyButton>
+        </div>
+      ))}
     </div>
   );
 };

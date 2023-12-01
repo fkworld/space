@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["commitlint", "fkworld", "unocss"],
+  "cSpell.words": ["commitlint", "fkworld", "mantine", "tabler", "tailwindcss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },

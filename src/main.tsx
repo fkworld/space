@@ -1,7 +1,5 @@
-// ! antd need, 用于重置浏览器样式, see https://ant.design/docs/react/migration-v5#technology-adjustment
-import 'antd/dist/reset.css';
-// ! vite need, see https://unocss.dev/integrations/vite
-import 'virtual:uno.css';
+import './main.css';
+import '@mantine/core/styles.css';
 
 import { createRoot } from 'react-dom/client';
 

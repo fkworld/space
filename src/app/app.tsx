@@ -1,4 +1,4 @@
-import { Divider } from 'antd';
+import { MantineProvider } from '@mantine/core';
 import { FC, StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -10,17 +10,18 @@ export const App: FC = () => {
   return (
     <StrictMode>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <div className="h-screen w-screen flex">
-          <div className="w-300px flex flex-none flex-col border-r-1 border-r-black/10 border-r-solid p-6">
-            <AppLogo />
-            <Divider />
-            <AppMenu />
-          </div>
+        <MantineProvider>
+          <div className="flex h-screen w-screen bg-gray-200">
+            <div className="w-256 flex-none bg-gray-100 p-16">
+              <AppLogo />
+              <AppMenu />
+            </div>
 
-          <div className="flex-1 overflow-x-hidden overflow-y-scroll p-6">
-            <AppRoutes />
+            <div className="flex-1 overflow-x-hidden overflow-y-scroll p-16">
+              <AppRoutes />
+            </div>
           </div>
-        </div>
+        </MantineProvider>
       </BrowserRouter>
     </StrictMode>
   );

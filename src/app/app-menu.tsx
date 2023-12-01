@@ -1,26 +1,23 @@
-import { ConfigProvider, Menu } from 'antd';
+import { NavLink } from '@mantine/core';
 import { FC } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import { displayRoutePath, ROUTES } from '@/configs/routes';
+import { ROUTES } from '@/configs/routes';
 
 export const AppMenu: FC = () => {
-  const location = useLocation();
   const navigate = useNavigate();
 
-  const items = ROUTES.filter((v) => v.isMenu).map((v) => {
-    return { key: v.path, label: displayRoutePath(v.path) };
-  });
-
   return (
-    <ConfigProvider theme={{ components: { Menu: { activeBarBorderWidth: 0 } } }}>
-      <Menu
-        defaultSelectedKeys={[location.pathname]}
-        items={items}
-        mode="inline"
-        theme="light"
-        onClick={(v) => navigate(v.key)}
-      />
-    </ConfigProvider>
+    <div className="flex flex-col">
+      {ROUTES.map((item) => {
+        return (
+          <NavLink
+            key={item.path}
+            label={item.path}
+            onClick={() => navigate(item.path)}
+          />
+        );
+      })}
+    </div>
   );
 };

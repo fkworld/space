@@ -15,7 +15,7 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "@unocss"
+    "plugin:tailwindcss/recommended"
   ],
   "plugins": ["@typescript-eslint", "simple-import-sort", "import", "react"],
   "settings": {
@@ -45,7 +45,11 @@
     // react jsx props 排序
     "react/jsx-sort-props": ["error", { "reservedFirst": true, "callbacksLast": true }],
     // Always use Array<T> or ReadonlyArray<T> for all array types. 参考 https://typescript-eslint.io/rules/array-type/
-    "@typescript-eslint/array-type": ["error", { "default": "generic" }]
+    "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+    // 禁用 import type 语法
+    "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "no-type-imports" }],
+    // 允许 _ 开头的未使用变量
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
   },
   "overrides": [
     // 对特殊文件，允许 export default
