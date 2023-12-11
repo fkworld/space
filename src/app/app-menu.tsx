@@ -1,5 +1,5 @@
 import { NavLink } from '@mantine/core';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { ROUTES } from '@/configs/routes';
 

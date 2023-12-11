@@ -1,5 +1,6 @@
 import { Loader, Title } from '@mantine/core';
-import { FC, Suspense } from 'react';
+import type { FC } from 'react';
+import { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { ROUTES } from '@/configs/routes';

@@ -2,7 +2,8 @@ import { ActionIcon, CopyButton, NumberInput, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconCheck, IconCopy } from '@tabler/icons-react';
 import Color from 'color';
-import { FC, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 
 export const Transformer: FC = () => {
   const [color, setColor] = useState<Color>(new Color('#00000080'));

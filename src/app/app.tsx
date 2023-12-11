@@ -1,5 +1,6 @@
 import { MantineProvider } from '@mantine/core';
-import { FC, StrictMode } from 'react';
+import type { FC } from 'react';
+import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { AppHeader } from './app-header';

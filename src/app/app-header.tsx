@@ -1,6 +1,6 @@
 import { Button, Title, Tooltip } from '@mantine/core';
 import { IconBrandGithub, IconPlanet, IconRocket } from '@tabler/icons-react';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { APP_HOMEPAGE, APP_VERSION } from '@/configs/app';
 

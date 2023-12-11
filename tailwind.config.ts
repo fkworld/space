@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./src/**/*.tsx'],

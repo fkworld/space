@@ -1,4 +1,5 @@
-import { lazy, LazyExoticComponent } from 'react';
+import type { LazyExoticComponent } from 'react';
+import { lazy } from 'react';
 
 export const ROUTES: Array<{
   path: string;
