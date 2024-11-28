@@ -1,22 +1,12 @@
 ls:
-  .js: kebab-case
-  .jsx: kebab-case
-  .cjs: kebab-case
-  .mjs: kebab-case
-  .config.js: kebab-case
-  .ts: kebab-case
-  .tsx: kebab-case
-  .d.ts: kebab-case
-  .test.ts: kebab-case
-  .test.tsx: kebab-case
-  .config.ts: kebab-case
-  .md: kebab-case
-  .mdx: kebab-case
+  .dir: kebab-case
+  .*: kebab-case
 
 ignore:
-  - node_modules
-  - dist
   - .git
+  - .github
   - .husky
   - .vscode
+  - dist
+  - node_modules
   - README.md

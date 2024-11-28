@@ -1,6 +1,6 @@
-import { Transformer } from './transformer';
+import { Transformer } from "./transformer";
 
-export default function Index() {
+export default function Page() {
   return (
     <div>
       <Transformer />
